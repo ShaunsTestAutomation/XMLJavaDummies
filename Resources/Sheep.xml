@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Sheep>
+	<sheep attribute1="one" attrib2="two"/>
+	<Sheep>This is the sheep text</Sheep>
+	<Sheep/>
+</Sheep>
+
