@@ -5,10 +5,14 @@ import java.io.*;
 public class CallSax {
     static public void main(String[] args) throws SAXException, ParserConfigurationException, IOException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
+        // Setting the factory.setValidating to true turns on DTD validation within the parser
+        // it should be noted that a document that has no DTD will generate errors when parsed if this is set.
+        factory.setValidating(true);
         SAXParser saxParser = factory.newSAXParser();
         XMLReader xmlReader = saxParser.getXMLReader();
 
         xmlReader.setContentHandler(new myContentHandler());
+        xmlReader.setErrorHandler(new MyErrorHandler());
 
         //Try to create a new parser from filename passed by command line argument at a fixed location
         try {

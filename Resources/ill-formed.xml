@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8 ?>
-        <!-- IllFormedDoc.xml -->
+<!-- IllFormedDoc.xml -->
 
         <Greeting>
             Hello world!
             <Question>
                     how are you?
-            <Question>  <!--oh no - this should be an end tag not a new question -->
-</Greeting>
+            <Question>  <!--oh no -
+                            this should be an end tag not a new question -->
+        </Greeting>
