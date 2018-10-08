@@ -1,3 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- InvalidDoc.dtd -->
-<!ELEMENT Greeting (#PCDATA)>
+<!ELEMENT Greeting (Question*)>
+<!-- <!ELEMENT Question (#PCDATA)> -->  <!-- Removing this element breaks the validation as the Question tag is defined in the xml doc -->
