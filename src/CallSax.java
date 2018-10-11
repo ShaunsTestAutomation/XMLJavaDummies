@@ -7,7 +7,7 @@ public class CallSax {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         // Setting the factory.setValidating to true turns on DTD validation within the parser
         // it should be noted that a document that has no DTD will generate errors when parsed if this is set.
-        factory.setValidating(true);
+        factory.setValidating(false);
         SAXParser saxParser = factory.newSAXParser();
         XMLReader xmlReader = saxParser.getXMLReader();
 
@@ -16,14 +16,14 @@ public class CallSax {
 
         //Try to create a new parser from filename passed by command line argument at a fixed location
         try {
-            xmlReader.parse(new File("..\\..\\..\\Resources\\" + args[0]).toString());
+            xmlReader.parse(new File("Resources\\" + args[0]).toString());
         }
         catch (SAXException s){
             System.out.println("Theres been a big mistake!");
             s.printStackTrace();
         }
         catch (FileNotFoundException e){
-            System.out.println("You supplied a filename that does not exist in the resources folder...");
+            System.out.println("You supplied a filename that does not exist in the resources folder..." + e.getMessage());
             System.out.println("Program is terminating; please re-run with a valid file name");
             System.out.println("syntax is:");
             System.out.println("java CallSax <filename>");
